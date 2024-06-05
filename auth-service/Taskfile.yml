@@ -1,0 +1,15 @@
+version: "3"
+
+tasks:
+  download-all:
+    cmds:
+      - go get github.com/ilyakaznacheev/cleanenv
+      - go get github.com/lib/pq
+      - go get github.com/jinzhu/copier
+      - go get golang.org/x/crypto/bcrypt
+      - go get github.com/fatih/color
+      - go get google.golang.org/grpc/internal/binarylog@v1.64.0
+      - go get google.golang.org/grpc/internal/pretty@v1.64.0
+      - go get github.com/golang-jwt/jwt/v5
+      - go get github.com/brianvoe/gofakeit/v6
+      - go get github.com/stretchr/testify/assert

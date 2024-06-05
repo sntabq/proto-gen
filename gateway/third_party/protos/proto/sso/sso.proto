@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package auth;
+
+// Его формат очень прост, в нем будут описаны:
+//
+//общая информация — версия протокола, пакет и опции для генерации Go-файлов,
+//сервисы — описание сигнатур методов, которые сервис должен реализовать,
+//формат сообщений — объекты,  которые будут принимать и возвращать методы сервисов.
+
+option go_package = "bxiit.sso.v1;ssov1";
+
+// Auth is service for managing permissions and roles.
+service Auth {
+  // Register registers a new user.
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  // Login logs in a user and returns an auth token.
+  rpc Login (LoginRequest) returns (LoginResponse);
+  // IsAdmin checks whether a user is an admin.
+  rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+}
+
+// Объект, который отправляется при вызове RPC-метода (ручки) Register.
+message RegisterRequest {
+  string email = 1; // Email of the user to register.
+  string password = 2; // Password of the user to register.
+}
+
+// Объект, котрый метод (ручка) вернет.
+message RegisterResponse {
+  int64 user_id = 1; // User ID of the registered user.
+}
+
+// То же самое для метода Login()
+message LoginRequest {
+  string email = 1; // Email of the user to login.
+  string password = 2; // Password of the user to login.
+  int32 app_id = 3; // ID of the app to login to.
+}
+
+message LoginResponse {
+  string token = 1; // Auth token of the logged in user.
+}
+
+message IsAdminRequest {
+  int64 user_id = 1; // User ID to validate.
+}
+
+message IsAdminResponse {
+  bool is_admin = 1;  // Indicates whether the user is an admin.
+}

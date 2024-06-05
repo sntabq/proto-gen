@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package catalogue;
+
+option go_package = "github.com/bxiit/protos/gen/go/catalogue;cataloguev1";
+
+service CatalogueService {
+  rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);
+  rpc ListItems(ListItemsRequest) returns (ListItemsResponse);
+  rpc GetItem(GetItemRequest) returns (GetItemResponse);
+}
+
+message ListItemsRequest {}
+
+message ListItemsResponse {
+  repeated Item items = 1;
+}
+
+message GetItemRequest {
+  string id = 1;
+}
+
+message GetItemResponse {
+  Item item = 1;
+}
+
+message CreateItemRequest {
+  Item item = 1;
+}
+message CreateItemResponse {
+  Item item = 1;
+}
+
+message Item {
+  int32 id = 1 [ json_name = "id" ];
+  string name = 2 [ json_name = "name" ];
+  int32 price = 3 [ json_name = "price" ];
+  string description = 4 [ json_name = "description" ];
+  int32 quantity = 5 [ json_name = "quantity" ];
+}
+
+message DeleteItemRequest {
+  int32 id = 1;
+}
+
+message DeleteItemResponse {
+  bool isDeleted = 1;
+}

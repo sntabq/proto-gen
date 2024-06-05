@@ -1,0 +1,5 @@
+env: "local"
+storage_path: "postgres://auth:auth@localhost:5449/online-shop_test?sslmode=disable"
+grpc:
+  port: 44044
+  timeout: 10h

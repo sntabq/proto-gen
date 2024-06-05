@@ -1,0 +1,26 @@
+{{define "subject"}}Welcome to our online shop!{{end}}
+{{define "plainBody"}}
+    Hi, {{ .username }}
+    Thanks for ordering in our company
+    Your {{ .itemName }} is coming to youuu
+    {{ .itemImage }}
+    Thanks,
+    The OS Team
+{{end}}
+{{define "htmlBody"}}
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<p>Hi, {{ .username }}</p>
+<p>Thanks for ordering in our company</p>
+<p>Your {{ .itemName }} is coming to youuu</p>
+<img src="{{.itemImage}}" alt="item image">
+<p>Thanks,</p>
+<p>The OS Team</p>
+</body>
+</html>
+{{end}}

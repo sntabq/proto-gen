@@ -1,0 +1,15 @@
+version: "3"
+
+tasks:
+  download-all:
+    cmds:
+      - go get github.com/ilyakaznacheev/cleanenv
+      - go get github.com/lib/pq
+      - go get github.com/jinzhu/copier
+      - go get golang.org/x/crypto/bcrypt
+      - go get github.com/fatih/color
+      - go get github.com/grpc-ecosystem/go-grpc-middleware/v2/interceptors
+      - go get google.golang.org/grpc
+      - go get github.com/rabbitmq/amqp091-go
+      - go get github.com/golang-jwt/jwt/v5
+      - go get github.com/grpc-ecosystem/grpc-gateway/v2/runtime

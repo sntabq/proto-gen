@@ -1,0 +1,12 @@
+version: "3"
+
+tasks:
+  download-all:
+    cmds:
+      - go get google.golang.org/grpc
+      - go get github.com/rs/cors
+      - go get github.com/grpc-ecosystem/grpc-gateway/v2
+      - go get github.com/grpc-ecosystem/grpc-gateway/v2/runtime
+      - go get google.golang.org/grpc@v1.64.0
+      - go get google.golang.org/grpc/status@v1.64.0
+      - go get google.golang.org/grpc/internal/transport@v1.64.0
