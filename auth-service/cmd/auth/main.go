@@ -17,16 +17,9 @@ const (
 )
 
 func main() {
-	// TODO: инициализировать объект конфига
 	cfg := config.MustLoad()
-
-	// TODO: инициализировать логгер
 	log := setupLogger(envLocal)
-
-	// TODO: инициализировать приложение (app)
 	application := app.New(log, cfg.GRPC.Port, cfg.StoragePath, cfg.TokenTTL)
-
-	// TODO: запустить gRPC-сервер приложения
 	go func() {
 		application.GRPCServer.MustRun()
 	}()

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package catalogue;
 
-option go_package = "github.com/bxiit/protos/gen/go/catalogue;cataloguev1";
+option go_package = "github.com/sntabq/protos/gen/go/catalogue;cataloguev1";
 
 service CatalogueService {
   rpc CreateItem(CreateItemRequest) returns (CreateItemResponse);

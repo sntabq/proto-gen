@@ -5,6 +5,6 @@ port: 8088
 smtp:
   host: smtp.office365.com
   port: 587
-  sender: 220002@astanait.edu.kz
-  username: 220002@astanait.edu.kz
-  password: Beka4747@
+  sender: 221212@astanait.edu.kz
+  username: 221212@astanait.edu.kz
+  password: Qqwerty1!

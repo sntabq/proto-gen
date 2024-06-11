@@ -8,7 +8,7 @@ package auth;
 //сервисы — описание сигнатур методов, которые сервис должен реализовать,
 //формат сообщений — объекты,  которые будут принимать и возвращать методы сервисов.
 
-option go_package = "bxiit.sso.v1;ssov1";
+option go_package = "sntabq.sso.v1;ssov1";
 
 // Auth is service for managing permissions and roles.
 service Auth {
